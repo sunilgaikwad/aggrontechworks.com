@@ -1,306 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aggron Techworks | Engineering & Manufacturing Solutions</title>
-  <meta name="description" content="Aggron Techworks - Precision engineering, machining, stamping, laser cutting and fabrication services in Pune." />
   <link rel="icon" type="image/png" href="favicon.png">
-
   <style>
-    :root{
-      --primary:#0a3d62;
-      --secondary:#1e90ff;
-      --light-bg:#f4f6f8;
-      --text:#333;
-      --accent:#ffcc00;
-      --muted:#6b7280;
-      --whatsapp:#25d366;
+    /* ===== GLOBAL STYLES ===== */
+    :root {
+      --primary: #0a3d62;
+      --secondary: #1e90ff;
+      --light-bg: #f4f6f8;
+      --text: #333;
+      --accent: #ffcc00;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background:var(--light-bg);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
+      background-color: var(--light-bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    a{color:var(--secondary); text-decoration:none}
-    a:hover{color:var(--accent)}
-
-    /* Header & hero */
-    header{
-      position:relative;
-      text-align:center;
-      color:#fff;
-      padding:0;
-      overflow:hidden;
-      background: linear-gradient(135deg,var(--primary),#082d4a);
+    a {
+      color: var(--secondary);
+      text-decoration: none;
     }
-    .hero-img{
-      width:100%;
-      height:340px;
-      object-fit:cover;
-      display:block;
-      filter:brightness(0.55);
-    }
-    .hero-content{
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      top:45%;
-      width:100%;
-      max-width:1100px;
-      padding:0 20px;
-      color:#fff;
-    }
-    .brand {
-      font-size:2.4rem;
-      font-weight:700;
-      letter-spacing:1px;
-      margin-bottom:6px;
-    }
-    .tagline{
-      font-size:1.05rem;
-      color:rgba(255,255,255,0.9);
+    a:hover {
+      color: var(--accent);
     }
 
-    /* Navigation */
-    nav{
-      background:#fff;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:12px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.06);
-      position:sticky;
-      top:0;
-      z-index:100;
-    }
-    nav a{
-      padding:14px 18px;
-      color:var(--primary);
-      font-weight:600;
-      border-radius:6px;
-      transition:all .22s ease;
-    }
-    nav a:hover{
-      background:var(--primary);
-      color:#fff;
-      transform:translateY(-2px);
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary), #082d4a);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
     }
 
-    main{
-      max-width:1100px;
-      margin:32px auto;
-      padding:0 20px 80px;
+    header h1 {
+      font-size: 2.8em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
-    section{margin-bottom:56px}
-
-    h2{
-      font-size:1.9rem;
-      color:var(--primary);
-      text-align:center;
-      margin-bottom:14px;
-      position:relative;
-    }
-    h2::after{
-      content:"";
-      display:block;
-      width:64px;height:4px;
-      background:var(--secondary);
-      margin:10px auto 0;border-radius:3px;
+    header p {
+      font-size: 1.2em;
+      color: #dfe6ed;
     }
 
-    /* About */
-    .about {
-      text-align:center;
-    }
-    .about p{
-      max-width:900px;margin:18px auto;font-size:1.05rem;color:#444;
-    }
-    .about .about-img{
-      display:block;margin:16px auto 0;border-radius:8px;max-width:100%;height:300px;object-fit:cover;box-shadow:0 8px 22px rgba(2,6,23,0.08)
-    }
-
-    /* Services grid */
-    .services{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:22px;
-      margin-top:18px;
-    }
-    .card{
-      background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.06);
-      transition:transform .25s ease, box-shadow .25s ease;
-      text-align:center;
-      overflow:hidden;
-    }
-    .card:hover{transform:translateY(-6px);box-shadow:0 12px 26px rgba(2,6,23,0.12)}
-    .card img{width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:12px}
-    .card h3{color:var(--secondary);margin-bottom:8px;font-size:1.12rem}
-    .card p{color:#545454;font-size:.98rem}
-
-    /* Contact block */
-    .contact{
-      background:#fff;padding:26px;border-radius:10px;box-shadow:0 8px 20px rgba(2,6,23,0.06);text-align:center;
-    }
-    .contact p{font-size:1.03rem;margin:10px 0;color:#222}
-    .contact .muted{color:var(--muted);font-size:.95rem;margin-top:6px}
-
-    /* Footer */
-    footer{
-      text-align:center;padding:18px 10px;background:var(--primary);color:#e6eef8;font-size:.95rem;
-      position:relative;
-    }
-
-    /* Floating WhatsApp FAB */
-    .fab {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 9999;
+    /* ===== NAVBAR ===== */
+    nav {
+      background-color: #fff;
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 12px;
-      pointer-events: auto;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    .fab .bubble {
-      display: none; /* hidden on small screens? we show on larger */
+    nav a {
+      padding: 15px 25px;
+      display: block;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    nav a:hover {
+      background-color: var(--primary);
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    /* ===== MAIN ===== */
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px 100px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    section h2 {
+      font-size: 2em;
+      color: var(--primary);
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: var(--secondary);
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card h3 {
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: #555;
+    }
+
+    /* ===== ABOUT ===== */
+    .about p {
+      max-width: 850px;
+      margin: auto;
+      font-size: 1.1em;
+      color: #444;
+      text-align: center;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
       background: #fff;
-      color: #111;
-      padding: 10px 14px;
-      border-radius: 999px;
-      box-shadow: 0 6px 18px rgba(2,6,23,0.12);
-      font-weight:600;
-      font-size:.95rem;
-      white-space:nowrap;
+      padding: 40px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
-    .fab a.whatsapp {
-      width:58px;height:58px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
-      background:var(--whatsapp);box-shadow:0 8px 22px rgba(37,211,102,0.18);border:none;
-      transition:transform .18s ease, box-shadow .18s ease; text-decoration:none;
-    }
-    .fab a.whatsapp svg{width:26px;height:26px;display:block}
-    .fab a.whatsapp:active{transform:scale(.98)}
-    .fab a.whatsapp:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(37,211,102,0.22)}
-
-    /* show bubble on hover for larger screens */
-    @media(min-width:680px){
-      .fab .bubble{display:block}
+    .contact p {
+      font-size: 1.1em;
+      margin: 10px 0;
     }
 
-    /* small screen tweaks */
-    @media(max-width:640px){
-      .hero-img{height:220px}
-      .brand{font-size:1.6rem}
-      .hero-content{top:40%}
-      .fab .bubble{display:none}
+    .contact strong {
+      color: var(--primary);
     }
 
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--primary);
+      color: #ddd;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.95em;
+      letter-spacing: 0.3px;
+    }
+
+    footer a {
+      color: #ddd;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      nav a {
+        padding: 12px 15px;
+        font-size: 0.95em;
+      }
+      .service-card {
+        padding: 25px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <!-- hero image -->
-    <img class="hero-img" src="https://images.unsplash.com/photo-1581091870622-6f9deaf1d8e1?auto=format&fit=crop&w=1600&q=80" alt="Precision engineering workshop">
-    <div class="hero-content" role="banner">
-      <div class="brand">Aggron Techworks</div>
-      <div class="tagline">Precision Engineering, Fabrication & Manufacturing Solutions</div>
-    </div>
+    <h1>Aggron Techworks</h1>
+    <p>Engineering & Manufacturing Solutions for a Better Tomorrow</p>
   </header>
 
-  <nav role="navigation" aria-label="Main navigation">
+  <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <main>
-    <section id="about" class="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Us</h2>
-      <img class="about-img" src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1200&q=80" alt="Industrial workshop floor">
+    <section id="about" class="about">
+      <h2>About Us</h2>
       <p>
-        Aggron Techworks is an engineering-driven firm specialising in high-precision manufacturing,
-        stamping, machining and assembly. Our experienced engineering team uses modern CAD/CAM workflows,
-        validated manufacturing processes and rigorous quality control to deliver robust components for
-        automotive, industrial equipment and other demanding applications.
+        Aggron Techworks is an engineering-driven organization offering precision-based design, manufacturing, and industrial
+        solutions. Our team of engineers and technicians deliver innovative, reliable, and cost-effective solutions for
+        automotive, industrial, and general engineering sectors. We are committed to quality, continuous improvement, and
+        customer satisfaction.
       </p>
     </section>
 
-    <section id="services" aria-labelledby="services-heading">
-      <h2 id="services-heading">Our Expertise</h2>
-      <div class="services" role="list">
-        <article class="card" role="listitem" aria-label="Precision Machining">
-          <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80" alt="Precision machining and CNC">
+    <section id="services">
+      <h2>Our Expertise</h2>
+      <div class="services">
+        <div class="service-card">
           <h3>Precision Machining</h3>
-          <p>High-accuracy CNC & conventional machining for tight-tolerance components with superior surface finish.</p>
-        </article>
-
-        <article class="card" role="listitem" aria-label="Sheet Metal Stamping">
-          <img src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=800&q=80" alt="Sheet metal stamping press">
+          <p>High-accuracy machining of components using CNC and conventional setups. Every component meets global quality standards with tight tolerances and superior surface finish.</p>
+        </div>
+        <div class="service-card">
           <h3>Sheet Metal Stamping</h3>
-          <p>Progressive & transfer stamping with optimized tooling to reduce stages and cycle time while maintaining strength.</p>
-        </article>
-
-        <article class="card" role="listitem" aria-label="Laser Cutting & Bending">
-          <img src="https://images.unsplash.com/photo-1615829385310-58e6b9df05ee?auto=format&fit=crop&w=800&q=80" alt="Laser cutting operation">
+          <p>Advanced stamping and forming solutions with optimized tooling stages, ensuring consistent quality, cost efficiency, and strength.</p>
+        </div>
+        <div class="service-card">
           <h3>Laser Cutting & Bending</h3>
-          <p>Accurate laser cutting and press brake bending for complex sheet parts — fast turnaround and repeatability.</p>
-        </article>
-
-        <article class="card" role="listitem" aria-label="Design & Development">
-          <img src="https://images.unsplash.com/photo-1604933761952-9a2e69bca4f6?auto=format&fit=crop&w=800&q=80" alt="CAD design on screen">
+          <p>State-of-the-art laser cutting and bending facilities to manufacture complex parts with precision and repeatability.</p>
+        </div>
+        <div class="service-card">
           <h3>Design & Development</h3>
-          <p>CAD/CAM (CATIA, SolidWorks, AutoForm) driven product development — from feasibility to production-ready design.</p>
-        </article>
-
-        <article class="card" role="listitem" aria-label="Assembly & Fabrication">
-          <img src="https://images.unsplash.com/photo-1603791452906-bab2e8b8f6a6?auto=format&fit=crop&w=800&q=80" alt="Assembly and fabrication">
+          <p>We utilize CAD/CAM tools like CATIA, AutoForm, and SolidWorks to develop feasible, production-ready engineering designs.</p>
+        </div>
+        <div class="service-card">
           <h3>Assembly & Fabrication</h3>
-          <p>Custom assemblies, jigs & fixtures, welding and final integration performed to industry quality standards.</p>
-        </article>
-
-        <article class="card" role="listitem" aria-label="Technical Support">
-          <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80" alt="Technical team inspecting parts">
+          <p>Custom assemblies, fixtures, and fabricated structures built for durability and functionality in demanding industrial environments.</p>
+        </div>
+        <div class="service-card">
           <h3>Technical Support</h3>
-          <p>Tooling validation, process optimization and long-term maintenance / production support for clients.</p>
-        </article>
+          <p>End-to-end technical assistance for tooling validation, process optimization, and long-term maintenance support.</p>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact Us</h2>
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
       <p><strong>Phone:</strong> +91 866-868-8988</p>
-      <p><strong>Email:</strong> <a href="mailto:sales@aggrontechworks.com">sales@aggrontechworks.com</a></p>
-      <p class="muted"><strong>Address:</strong> C-402, Capital City, Plot No. A-7/2/B, Nighoje Chakan Industrial Area, Phase IV, Khed, Pune – 410501</p>
+      <p><strong>Email:</strong> sales@aggrontechworks.com</p>
+      <p><strong>Address:</strong> C-402, Capital City, Plot No. A-7/2/B, Nighoje Chakan Industrial Area, Phase IV, Khed, Pune – 410501</p>
     </section>
   </main>
 
   <footer>
     &copy; 2025 Aggron Techworks | Engineering & Manufacturing Solutions. All Rights Reserved.
   </footer>
-
-  <!-- Floating WhatsApp Button -->
-  <!-- Clicking opens WhatsApp chat: https://wa.me/<countrycode+number> -->
-  <div class="fab" aria-hidden="false">
-    <div class="bubble" role="status">Chat with us on WhatsApp</div>
-    <a class="whatsapp" href="https://wa.me/918668688988?text=Hello%20Aggron%20Techworks%20-%20I%20would%20like%20to%20inquire%20about%20your%20services" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-      <!-- WhatsApp SVG icon (white) -->
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <path d="M20.52 3.48A11.86 11.86 0 0012 0C5.373 0 .017 5.355.017 11.98 0 14.37.69 16.64 1.98 18.57L0 24l5.6-1.47A11.99 11.99 0 0012 24c6.627 0 11.98-5.355 11.98-12 0-3.21-1.25-6.22-3.46-8.52z" fill="white" opacity=".12"/>
-        <path d="M17.26 14.4c-.29-.15-1.71-.84-1.97-.94-.26-.1-.45-.15-.64.15-.18.29-.7.94-.86 1.14-.16.19-.33.21-.61.07-1.66-.78-2.74-1.49-3.84-3.3-.29-.5.29-.46 1.02-1.52.36-.52.18-.89-.1-1.21-.26-.3-.64-.78-.96-1.18-.33-.4-.7-.43-.96-.43-.26 0-.56.01-.86.01-.3 0-.79.11-1.21.57-.41.46-1.56 1.53-1.56 3.73 0 2.2 1.6 4.33 1.82 4.63.22.3 3.15 4.78 7.62 6.69 4.47 1.91 4.47 1.28 5.27 1.2.8-.08 2.59-1.05 2.96-2.06.37-1.01.37-1.87.26-2.06-.11-.19-.4-.31-.86-.46-.47-.15-2.77-1.07-3.06-1.19z" fill="#fff"/>
-      </svg>
-    </a>
-  </div>
-
 </body>
 </html>
