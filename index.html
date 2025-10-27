@@ -1,85 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aggron Techworks - Engineering & Manufacturing Solutions</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            text-align: center;
-        }
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 40px 20px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-        main {
-            padding: 30px 20px;
-        }
-        section {
-            margin-top: 40px;
-        }
-        .contact {
-            margin-top: 30px;
-            font-size: 1.1em;
-        }
-        .contact p {
-            margin: 8px 0;
-        }
-        footer {
-            background-color: #222;
-            color: #ccc;
-            padding: 15px 20px;
-            font-size: 0.9em;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aggron Techworks | Engineering & Manufacturing Solutions</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    /* ===== GLOBAL STYLES ===== */
+    :root {
+      --primary: #0a3d62;
+      --secondary: #1e90ff;
+      --light-bg: #f4f6f8;
+      --text: #333;
+      --accent: #ffcc00;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--accent);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary), #082d4a);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #dfe6ed;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      padding: 15px 25px;
+      display: block;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    nav a:hover {
+      background-color: var(--primary);
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    /* ===== MAIN ===== */
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px 100px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    section h2 {
+      font-size: 2em;
+      color: var(--primary);
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: var(--secondary);
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card h3 {
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: #555;
+    }
+
+    /* ===== ABOUT ===== */
+    .about p {
+      max-width: 850px;
+      margin: auto;
+      font-size: 1.1em;
+      color: #444;
+      text-align: center;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      background: #fff;
+      padding: 40px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .contact p {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+
+    .contact strong {
+      color: var(--primary);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--primary);
+      color: #ddd;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.95em;
+      letter-spacing: 0.3px;
+    }
+
+    footer a {
+      color: #ddd;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      nav a {
+        padding: 12px 15px;
+        font-size: 0.95em;
+      }
+      .service-card {
+        padding: 25px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Aggron Techworks</h1>
-        <p>Engineering & Manufacturing Solutions for a Better Tomorrow</p>
-    </header>
-    <main>
-        <h2>Welcome to Aggron Techworks</h2>
-        <p>We specialize in precision engineering, innovative manufacturing, and delivering top-quality industrial solutions to our clients worldwide.</p>
-        
-        <section>
-            <h2>Our Services</h2>
-            <h3>Custom Engineering Design</h3>
-            <p>From prototyping to final product, we design engineering solutions built to last and perform.</p>
-            
-            <h3>Advanced Manufacturing</h3>
-            <p>Utilizing state-of-the-art equipment for high-quality, scalable production runs.</p>
-            
-            <h3>Maintenance & Support</h3>
-            <p>Ongoing technical support and maintenance to keep your operations running smoothly.</p>
-        </section>
-        
-        <div class="contact">
-            <h2>Contact Us</h2>
-            <p><strong>Phone:</strong> +91 866-868-8988</p>
-            <p><strong>Location:</strong> Pune, Maharashtra, India</p>
-            <p><strong>Email:</strong> sales@aggrontechworks.com</p>
+
+  <header>
+    <h1>Aggron Techworks</h1>
+    <p>Engineering & Manufacturing Solutions for a Better Tomorrow</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>
+        Aggron Techworks is an engineering-driven organization offering precision-based design, manufacturing, and industrial
+        solutions. Our team of engineers and technicians deliver innovative, reliable, and cost-effective solutions for
+        automotive, industrial, and general engineering sectors. We are committed to quality, continuous improvement, and
+        customer satisfaction.
+      </p>
+    </section>
+
+    <section id="services">
+      <h2>Our Expertise</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Precision Machining</h3>
+          <p>High-accuracy machining of components using CNC and conventional setups. Every component meets global quality standards with tight tolerances and superior surface finish.</p>
         </div>
-    </main>
-    <footer>
-        &copy; 2025 Aggron Techworks. All rights reserved.
-    </footer>
+        <div class="service-card">
+          <h3>Sheet Metal Stamping</h3>
+          <p>Advanced stamping and forming solutions with optimized tooling stages, ensuring consistent quality, cost efficiency, and strength.</p>
+        </div>
+        <div class="service-card">
+          <h3>Laser Cutting & Bending</h3>
+          <p>State-of-the-art laser cutting and bending facilities to manufacture complex parts with precision and repeatability.</p>
+        </div>
+        <div class="service-card">
+          <h3>Design & Development</h3>
+          <p>We utilize CAD/CAM tools like CATIA, AutoForm, and SolidWorks to develop feasible, production-ready engineering designs.</p>
+        </div>
+        <div class="service-card">
+          <h3>Assembly & Fabrication</h3>
+          <p>Custom assemblies, fixtures, and fabricated structures built for durability and functionality in demanding industrial environments.</p>
+        </div>
+        <div class="service-card">
+          <h3>Technical Support</h3>
+          <p>End-to-end technical assistance for tooling validation, process optimization, and long-term maintenance support.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Phone:</strong> +91 866-868-8988</p>
+      <p><strong>Email:</strong> sales@aggrontechworks.com</p>
+      <p><strong>Address:</strong> C-402, Capital City, Plot No. A-7/2/B, Nighoje Chakan Industrial Area, Phase IV, Khed, Pune – 410501</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Aggron Techworks | Engineering & Manufacturing Solutions. All Rights Reserved.
+  </footer>
 </body>
 </html>
